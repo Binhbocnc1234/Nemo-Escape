@@ -374,7 +374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &256035493
 RectTransform:
   m_ObjectHideFlags: 0
@@ -934,7 +934,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.21226418, g: 1, b: 0.9618481, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3767,6 +3767,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   drag: 2
+  level: 1
+  exp: 0
   ren: {fileID: 1257910146}
   animator: {fileID: 1257910147}
   isTurnAround: 0
