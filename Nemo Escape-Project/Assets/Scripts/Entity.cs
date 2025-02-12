@@ -27,4 +27,8 @@ public class Entity : MonoBehaviour
         // Hiệu ứng hủy (nếu cần)
         Destroy(gameObject);
     }
+    public void SetMaxHealth(int max_health){
+        this.max_health = max_health;
+        health = max_health;
+    }
 }

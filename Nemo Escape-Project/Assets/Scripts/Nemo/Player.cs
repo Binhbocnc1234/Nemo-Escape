@@ -1,12 +1,16 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(Entity))]
 public class Player : Singleton<Player>{
     public float speed = 5f;
     public float drag = 2f;
+    public int level = 1;
+    [HideInInspector] public int exp = 0;
 
     public SpriteRenderer ren;
     public Animator animator;
+    Entity entity;
 
     private Vector2 velocity;
     private Queue<Vector2> movementHistory = new Queue<Vector2>();
@@ -14,6 +18,9 @@ public class Player : Singleton<Player>{
     private float recordTime = 0.25f; // 0.5 seconds delay
     //State
     [HideInInspector] public bool isTurnAround = false;
+    void Start(){
+        
+    }
     void Update()
     {
         
@@ -80,6 +87,7 @@ public class Player : Singleton<Player>{
         }
     }
     void ToLevel(int level){
-        
+        transform.localScale *= level;
+        entity.SetMaxHealth(level*100);
     }
 }

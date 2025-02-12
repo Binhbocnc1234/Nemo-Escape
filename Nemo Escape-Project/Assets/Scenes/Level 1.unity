@@ -442,8 +442,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 5
-  minBounds: {x: -10, y: -5}
-  maxBounds: {x: 10, y: 5}
+  minBounds: {x: -15.5, y: -8}
+  maxBounds: {x: 15.5, y: 9}
 --- !u!1 &445203772
 GameObject:
   m_ObjectHideFlags: 0
