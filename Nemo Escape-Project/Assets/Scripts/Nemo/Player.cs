@@ -8,9 +8,6 @@ public class Player : Singleton<Player>{
     public SpriteRenderer ren;
     public Animator animator;
 
-    public Vector2 minBounds = new Vector2(-10f, -5f); // Minimum X, Y position
-    public Vector2 maxBounds = new Vector2(10f, 5f);  // Maximum X, Y position
-
     private Vector2 velocity;
     private Queue<Vector2> movementHistory = new Queue<Vector2>();
     private Queue<float> timeStamps = new Queue<float>();
@@ -57,8 +54,9 @@ public class Player : Singleton<Player>{
     void ClampPosition()
     {
         // Restrict the player's position within the defined bounds
-        float clampedX = Mathf.Clamp(transform.position.x, minBounds.x, maxBounds.x);
-        float clampedY = Mathf.Clamp(transform.position.y, minBounds.y, maxBounds.y);
+        GameManager g = GameManager.Instance;
+        float clampedX = Mathf.Clamp(transform.position.x, g.minBounds.x, g.maxBounds.x);
+        float clampedY = Mathf.Clamp(transform.position.y, g.minBounds.y, g.maxBounds.y);
         transform.position = new Vector3(clampedX, clampedY, transform.position.z);
     }
     void HandlingRenderer(){

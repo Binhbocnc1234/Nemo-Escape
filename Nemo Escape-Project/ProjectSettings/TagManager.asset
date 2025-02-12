@@ -38,6 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 4107173595
+    locked: 0
+  - name: Enviroment
+    uniqueID: 4276647077
+    locked: 0
+  - name: Fish
+    uniqueID: 3710367861
+    locked: 0
+  - name: Nemo
+    uniqueID: 2208906923
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

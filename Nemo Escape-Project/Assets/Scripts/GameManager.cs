@@ -5,7 +5,9 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     public int score;
-    // public 
+    
+    public Vector2 minBounds = new Vector2(-10f, -5f); // Minimum X, Y position
+    public Vector2 maxBounds = new Vector2(10f, 5f);  // Maximum X, Y position
     void Start()
     {
         
@@ -23,9 +25,9 @@ public class GameManager : Singleton<GameManager>
 
     }
     public void Pause(){
-        // Time.unscaledDeltaTime = 0f;
+        Time.timeScale = 0;
     }
     public void Resume(){
-        // Time. = 1f;
+        Time.timeScale = 1;
     }
 }
