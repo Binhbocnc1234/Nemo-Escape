@@ -21,7 +21,10 @@ public class Entity : MonoBehaviour
         }
         percent = health/max_health;
     }
-
+    public void GetHealth(int health){
+        this.health += health;
+        health = Mathf.Min(health, max_health);
+    }
     void DestroyEntity()
     {
         // Hiệu ứng hủy (nếu cần)

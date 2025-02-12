@@ -17,7 +17,7 @@ public class Player : Singleton<Player>{
     private Queue<float> timeStamps = new Queue<float>();
     private float recordTime = 0.25f; // 0.5 seconds delay
     //State
-    [HideInInspector] public bool isTurnAround = false;
+    [HideInInspector] public bool isTurnAround = false, isEating = false;
     void Start(){
         
     }
@@ -80,6 +80,9 @@ public class Player : Singleton<Player>{
         }
         if (isTurnAround){
             animator.Play("Turn around");
+        }
+        else if (isEating){
+            animator.Play("Eat");
         }
         else{
             animator.Play("Idle");
