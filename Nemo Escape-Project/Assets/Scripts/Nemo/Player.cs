@@ -58,8 +58,7 @@ public class Player : Singleton<Player>{
         transform.position += new Vector3(velocity.x, velocity.y, 0) *  Time.deltaTime;
     }
 
-    void ClampPosition()
-    {
+    void ClampPosition(){
         // Restrict the player's position within the defined bounds
         GameManager g = GameManager.Instance;
         float clampedX = Mathf.Clamp(transform.position.x, g.minBounds.x, g.maxBounds.x);
