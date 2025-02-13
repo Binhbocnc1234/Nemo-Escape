@@ -1,19 +1,26 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(Entity))]
 public class Player : Singleton<Player>{
     public float speed = 5f;
     public float drag = 2f;
+    public int level = 1;
+    [HideInInspector] public int exp = 0;
 
     public SpriteRenderer ren;
     public Animator animator;
+    Entity entity;
 
     private Vector2 velocity;
     private Queue<Vector2> movementHistory = new Queue<Vector2>();
     private Queue<float> timeStamps = new Queue<float>();
     private float recordTime = 0.25f; // 0.5 seconds delay
     //State
-    [HideInInspector] public bool isTurnAround = false;
+    [HideInInspector] public bool isTurnAround = false, isEating = false;
+    void Start(){
+        
+    }
     void Update()
     {
         
@@ -51,8 +58,7 @@ public class Player : Singleton<Player>{
         transform.position += new Vector3(velocity.x, velocity.y, 0) *  Time.deltaTime;
     }
 
-    void ClampPosition()
-    {
+    void ClampPosition(){
         // Restrict the player's position within the defined bounds
         GameManager g = GameManager.Instance;
         float clampedX = Mathf.Clamp(transform.position.x, g.minBounds.x, g.maxBounds.x);
@@ -75,11 +81,15 @@ public class Player : Singleton<Player>{
         if (isTurnAround){
             animator.Play("Turn around");
         }
+        else if (isEating){
+            animator.Play("Eat");
+        }
         else{
             animator.Play("Idle");
         }
     }
     void ToLevel(int level){
-        
+        transform.localScale *= level;
+        entity.SetMaxHealth(level*100);
     }
 }
