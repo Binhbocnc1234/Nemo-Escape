@@ -12,6 +12,7 @@ public enum FishState{
 /// </summary>
 public partial class Fish : MonoBehaviour
 {
+    public GameObject Nemo;
     public int level;
     public int score; //Điểm ghi được khi bị Nemo ăn
     public float speed, range; //range: tầm phát hiện của Fish
@@ -84,4 +85,7 @@ public partial class Fish : MonoBehaviour
             transform.localScale = oldScale;
         }
     }
+
+
+
 }
