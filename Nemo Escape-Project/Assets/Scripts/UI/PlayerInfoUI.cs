@@ -14,7 +14,7 @@ public class PlayerInfoUI : MonoBehaviour
     }
     void Update(){
 
-        healthBar.size = pl.GetComponent<Entity>().percent;
+        healthBar.size = pl.GetComponent<Entity>().GetPercent();
         score.text = GameManager.Instance.score.ToString();
     }
 }

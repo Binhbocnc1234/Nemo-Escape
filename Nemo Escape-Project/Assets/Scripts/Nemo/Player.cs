@@ -3,10 +3,13 @@ using System.Collections.Generic;
 
 [RequireComponent(typeof(Entity))]
 public class Player : Singleton<Player>{
+    public int level{get; private set;}
     public float speed = 5f;
     public float drag = 2f;
-    public int level = 1;
     [HideInInspector] public int exp = 0;
+
+    public int healthLoss = 1;
+    Timer healthLossTimer = new Timer(1);
 
     public SpriteRenderer ren;
     public Animator animator;
@@ -19,11 +22,13 @@ public class Player : Singleton<Player>{
     //State
     [HideInInspector] public bool isTurnAround = false, isEating = false;
     void Start(){
-        
+        entity = GetComponent<Entity>(); //Entity bị trùng với SetLevel
     }
     void Update()
     {
-        
+        if (healthLossTimer.Count()){
+            entity.TakeDamage(healthLoss);
+        }
         RecordMovement();
         Move();
         ClampPosition(); // Ensure the player stays inside the bounds
@@ -68,11 +73,19 @@ public class Player : Singleton<Player>{
     void HandlingRenderer(){
         if (velocity.x > 0)
         {
-            ren.flipX = true;
+            Vector3 oldScale = ren.transform.localScale;
+            if (oldScale.x > 0){
+                oldScale.x *= -1;
+            }
+            ren.transform.localScale = oldScale;
         }
         else if (velocity.x < 0)
         {
-            ren.flipX = false;
+            Vector3 oldScale = ren.transform.localScale;
+            if (oldScale.x < 0){
+                oldScale.x *= -1;
+            }
+            ren.transform.localScale = oldScale;
         }
         if (velocity.x*movementHistory.Peek().x < 0){
             animator.Play("Turn around");
@@ -88,8 +101,11 @@ public class Player : Singleton<Player>{
             animator.Play("Idle");
         }
     }
-    void ToLevel(int level){
+    public void SetLevel(int level){
         transform.localScale *= level;
+        if (entity == null){
+            Debug.LogError("Null ref");
+        }
         entity.SetMaxHealth(level*100);
     }
 }

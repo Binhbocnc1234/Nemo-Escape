@@ -4,7 +4,6 @@ public class Entity : MonoBehaviour
 {
     public int max_health = 100;
     public int health{get; private set;}
-    [HideInInspector] public float percent = 1;
 
     void Start()
     {
@@ -19,12 +18,12 @@ public class Entity : MonoBehaviour
             health = 0;
             DestroyEntity();
         }
-        percent = health/max_health;
     }
-    public void GetHealth(int health){
-        this.health += health;
-        health = Mathf.Min(health, max_health);
+    public void GetHealth(int ammount){
+        health += ammount;
+        ammount = Mathf.Min(ammount, max_health);
     }
+    public float GetPercent(){return health/(float)max_health;}
     void DestroyEntity()
     {
         // Hiệu ứng hủy (nếu cần)
