@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class PlayerInfoUI : MonoBehaviour
+public class PlayerInfoUI : Singleton<PlayerInfoUI>
 {
-    public Scrollbar healthBar;
-    public TMP_Text score;
+    public Scrollbar healthBar, expBar;
     private Player pl;
     void Start(){
         pl = Player.Instance;
@@ -15,6 +14,8 @@ public class PlayerInfoUI : MonoBehaviour
     void Update(){
 
         healthBar.size = pl.GetComponent<Entity>().GetPercent();
-        score.text = GameManager.Instance.score.ToString();
+    }
+    public void SetNewExp(){
+        expBar.GetComponent<ScrollBarTrigger>().ChangeSize(pl.exp/pl.max_exp);
     }
 }

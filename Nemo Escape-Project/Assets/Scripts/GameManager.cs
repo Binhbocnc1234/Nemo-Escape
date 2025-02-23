@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : Singleton<GameManager>
-{
-    public int score;
+public class GameManager : Singleton<GameManager>{
     public int level;
     
     List<Level> levelContainer;
@@ -20,7 +18,6 @@ public class GameManager : Singleton<GameManager>
             new Level("Chimelong Ocean Kingdom", 1000, Creature.ElectriclEel),
             new Level("Black Sea", 1500, Creature.KillerWhale)
         };
-        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
@@ -32,7 +29,7 @@ public class GameManager : Singleton<GameManager>
         PlayerPrefs.SetInt("level", Player.Instance.level);
     }
     public void Lose(){
-
+        Debug.Log("Player lose");
     }
     public void Pause(){
         Time.timeScale = 0;
@@ -42,6 +39,7 @@ public class GameManager : Singleton<GameManager>
     }
     public void Save(){
         PlayerPrefs.SetInt("level", level);
+        PlayerPrefs.SetInt("player_level", Player.Instance.level);
         PlayerPrefs.SetString("name", playerName);
     }
     public void Exit(){

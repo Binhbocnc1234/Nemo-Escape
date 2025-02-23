@@ -18,6 +18,7 @@ public class LevelSelector : MonoBehaviour
             else{
                 child.GetComponent<Button>().interactable = false;
             }
+            ++cnt;
         }
     }
 

@@ -223,6 +223,10 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7468088886550494225, guid: 75434235d241bfc40ba00e575bb5b70b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -791,6 +795,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1166038315}
   - component: {fileID: 1166038316}
+  - component: {fileID: 1166038317}
   m_Layer: 5
   m_Name: Level container
   m_TagString: Untagged
@@ -844,6 +849,19 @@ MonoBehaviour:
   m_Spacing: {x: 250.9, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 3
+--- !u!114 &1166038317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166038314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32564558d230bd644a80375479ea4c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  completedLevel: 0
 --- !u!1001 &1721515446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -943,6 +961,10 @@ PrefabInstance:
     - target: {fileID: 6599174802150470263, guid: 75434235d241bfc40ba00e575bb5b70b, type: 3}
       propertyPath: m_Name
       value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468088886550494225, guid: 75434235d241bfc40ba00e575bb5b70b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

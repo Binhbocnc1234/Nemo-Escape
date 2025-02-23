@@ -5,17 +5,21 @@ using UnityEngine;
 public enum FishState{
     Idle,
     Attack,
-    Escape
+    Escape,
+    Eat,
 }
 /// <summary>
 /// A script used by Nemo and other fish
 /// </summary>
-public partial class Fish : MonoBehaviour
-{
+public partial class Fish : MonoBehaviour{
+    public Creature type;
     public int level;
     public int score; //Điểm ghi được khi bị Nemo ăn
     public float speed, range; //range: tầm phát hiện của Fish
+
     public SpriteRenderer ren;
+    public Animator animator;
+
     [HideInInspector] public FishState fishState = FishState.Idle;
     Vector3 diff; //different between Player and this Fish
     public Vector3 dir;
