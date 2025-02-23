@@ -104,6 +104,7 @@ MonoBehaviour:
   range: 3
   ren: {fileID: 7948811129399361315}
   fishState: 0
+  dir: {x: 0, y: 0, z: 0}
 --- !u!1 &7640323760993822132
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +181,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -211769058, guid: ab235eed383c5804297c43ff88b143d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.66, y: 0.85}

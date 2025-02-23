@@ -9,4 +9,14 @@ public partial class Fish : MonoBehaviour{
         Move(1.3f);
         dir = (Player.Instance.transform.position - transform.position).normalized;
     }
+    void CheckNemo(){
+        if (diff.magnitude <= 0.3f && this.level > Player.Instance.level){
+            fishState = FishState.Eat;
+            Destroy(Player.Instance.gameObject);
+        }
+    }
+    public void EndEat(){
+        fishState = FishState.Idle;
+
+    }
 }

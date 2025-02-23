@@ -12,13 +12,6 @@ public partial class Fish : MonoBehaviour
 
         if (timer.Count()){
             dir += new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0);
-            if (dir == Vector3.zero){
-                dir.Normalize();
-            }
-            else{
-                dir = Vector3.up;
-            }
-
         }
         
     }

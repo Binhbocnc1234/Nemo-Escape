@@ -20,11 +20,14 @@ public class NemoEat : MonoBehaviour
             float dist = Vector3.Distance(child.position, mouth.position);
             
             if (dist <= eatRadius){
-                GameManager.Instance.score += fish.score;
+                Player.Instance.exp += fish.score;
+                PlayerInfoUI.Instance.SetNewExp();
                 Player.Instance.GetComponent<Entity>().GetHealth(fish.score);
                 Player.Instance.isEating = true;
+
                 Destroy(fish.gameObject);
             }
         }
     }
+    
 }

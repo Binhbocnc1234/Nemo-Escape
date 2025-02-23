@@ -6,7 +6,7 @@ public class Player : Singleton<Player>{
     public int level;
     public float speed = 5f;
     public float drag = 2f;
-    [HideInInspector] public int exp = 0;
+    [HideInInspector] public int exp = 0, max_exp = 50;
 
     public int healthLoss = 1;
     Timer healthLossTimer = new Timer(1);
@@ -20,15 +20,18 @@ public class Player : Singleton<Player>{
     private Queue<float> timeStamps = new Queue<float>();
     private float recordTime = 0.25f; // 0.5 seconds delay
     //State
-    [HideInInspector] public bool isTurnAround = false, isEating = false;
+    [HideInInspector] public bool isTurnAround = false, isEating = false, isGrow = false;
     void Start(){
         entity = GetComponent<Entity>(); //Entity bị trùng với SetLevel
-        SetLevel(PlayerPrefs.GetInt("level", 1));
+        SetLevel(PlayerPrefs.GetInt("player_level", 1));
     }
     void Update()
     {
         if (healthLossTimer.Count()){
             entity.TakeDamage(healthLoss);
+        }
+        if (exp >= max_exp){
+            SetLevel(level + 1);
         }
         RecordMovement();
         Move();
@@ -72,30 +75,20 @@ public class Player : Singleton<Player>{
         transform.position = new Vector3(clampedX, clampedY, transform.position.z);
     }
     void HandlingRenderer(){
-        if (dir.x > 0) // Moving right
-        {
-            Vector3 oldScale = ren.transform.localScale;
-            if (oldScale.x < 0) // If facing left, flip to right
-            {
-                oldScale.x *= -1;
-            }
-            ren.transform.localScale = oldScale;
+        if (dir.x > 0){
+            transform.localScale = new Vector3(-1, 1, 1);
         }
-        else if (dir.x < 0) // Moving left
-        {
-            Vector3 oldScale = ren.transform.localScale;
-            if (oldScale.x > 0) // If facing right, flip to left
-            {
-                oldScale.x *= -1;
-            }
-            ren.transform.localScale = oldScale;
+        else{
+            transform.localScale = new Vector3(1, 1, 1);
         }
-
         if (dir.x*movementHistory.Peek().x < 0){
             animator.Play("Turn around");
             isTurnAround = true;
         }
-        if (isTurnAround){
+        if (isGrow){
+            animator.Play("Grow");
+        }
+        else if (isTurnAround){
             animator.Play("Turn around");
         }
         else if (isEating){
@@ -105,13 +98,20 @@ public class Player : Singleton<Player>{
             animator.Play("Idle");
         }
     }
+    public void EndGrow(){
+        isGrow = false;
+    }
     public void SetLevel(int level){
         level = Mathf.Max(1, level);
         this.level  = level;
         transform.localScale *= level;
+        max_exp = 500 + level*200;
+        exp = 0;
         if (entity == null){
             Debug.LogError("Null ref");
         }
         entity.SetMaxHealth(level*100);
     }
+    
+    
 }
