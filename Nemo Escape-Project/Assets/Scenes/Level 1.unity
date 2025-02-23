@@ -572,7 +572,7 @@ MonoBehaviour:
   maxBounds: {x: 24, y: 8}
   playerName: 
   completedLevel: 0
---- !u!1 &339117781
+--- !u!1 &371401615
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -580,16 +580,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 339117782}
-  - component: {fileID: 339117783}
+  - component: {fileID: 371401617}
+  - component: {fileID: 371401616}
   m_Layer: 0
-  m_Name: right bar
+  m_Name: WaveManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &339117782
+--- !u!114 &371401616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371401615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ef55d5d35aa2b74e965577b9d219769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  waveLevel: 1
+--- !u!4 &371401617
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1953,7 +1967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &870817576
 Transform:
   m_ObjectHideFlags: 0
@@ -4035,3 +4049,4 @@ SceneRoots:
   - {fileID: 870817576}
   - {fileID: 904172231}
   - {fileID: 1906171037}
+  - {fileID: 371401617}

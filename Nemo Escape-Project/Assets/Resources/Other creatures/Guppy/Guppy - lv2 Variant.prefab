@@ -60,6 +60,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3840174530933669905, guid: d501663e2fe0f884e8ec52e1dbb748b8, type: 3}
+      propertyPath: level
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3840174530933669905, guid: d501663e2fe0f884e8ec52e1dbb748b8, type: 3}
+      propertyPath: speed
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4440205082690649606, guid: d501663e2fe0f884e8ec52e1dbb748b8, type: 3}
       propertyPath: m_Name
       value: Guppy - lv2 Variant

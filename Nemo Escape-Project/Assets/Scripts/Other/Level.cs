@@ -6,15 +6,15 @@ public enum Creature{
     Guppy,
     Guppy2,
     Guppy3,
-    Neon,
+    Neon, //
     PinkNeon,
     AngelFish,
     DragonFish,
-    ElectriclEel,
+    ElectriclEel, // 
     Shark,
     BlueDragonFish,
     GreatWhiteShark,
-    KillerWhale,
+    KillerWhale, // 
 }
 public class Level
 {
