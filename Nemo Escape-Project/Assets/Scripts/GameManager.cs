@@ -6,16 +6,18 @@ public class GameManager : Singleton<GameManager>
 {
     public int score;
     public int level;
-    public string playerName;
+    
     List<Level> levelContainer;
     public Vector2 minBounds = new Vector2(-10f, -5f); // Minimum X, Y position
     public Vector2 maxBounds = new Vector2(10f, 5f);  // Maximum X, Y position
-    void Start()
-    {
-        Player.Instance.SetLevel(PlayerPrefs.GetInt("level", 1));
+    //Saved data
+    [HideInInspector] public string playerName;
+    [HideInInspector] public int completedLevel;
+    void Start(){
+        playerName = PlayerPrefs.GetString("name", "");
         levelContainer = new List<Level>(){
             new Level("Bumble fish tank", 500, Creature.Neon),
-            new Level("Chimelong Ocean Kingdom", 1000, Creature.ElectrilEel),
+            new Level("Chimelong Ocean Kingdom", 1000, Creature.ElectriclEel),
             new Level("Black Sea", 1500, Creature.KillerWhale)
         };
         DontDestroyOnLoad(this.gameObject);
@@ -37,6 +39,14 @@ public class GameManager : Singleton<GameManager>
     }
     public void Resume(){
         Time.timeScale = 1;
+    }
+    public void Save(){
+        PlayerPrefs.SetInt("level", level);
+        PlayerPrefs.SetString("name", playerName);
+    }
+    public void Exit(){
+        Save();
+        Application.Quit();
     }
     public Vector3 RandomPosInBox(){
         return new Vector3(Random.Range(minBounds.x, maxBounds.x), 

@@ -9,24 +9,21 @@ public partial class Fish : MonoBehaviour
     void ChillFish()
     {
         Move();
-        transform.Translate(diff.normalized*Time.deltaTime*speed);
-        if (CheckOutOfBound(0)){
-            direction *= -1;
-        }
-        else if (timer.Count()){
-            direction += new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0);
-            if (direction != Vector3.zero){
-                direction.Normalize();
+
+        if (timer.Count()){
+            dir += new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0);
+            if (dir == Vector3.zero){
+                dir.Normalize();
             }
             else{
-                direction = Vector3.up;
+                dir = Vector3.up;
             }
 
         }
         
     }
     void Escape(){
-        direction = (transform.position - Player.Instance.transform.position).normalized;
+        dir = (transform.position - Player.Instance.transform.position).normalized;
         Move();
         
     }

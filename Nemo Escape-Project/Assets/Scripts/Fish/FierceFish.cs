@@ -7,6 +7,6 @@ public partial class Fish : MonoBehaviour{
     // float perseverance = 3f;
     void Attack(){
         Move(1.3f);
-        direction = (Player.Instance.transform.position - transform.position).normalized;
+        dir = (Player.Instance.transform.position - transform.position).normalized;
     }
 }

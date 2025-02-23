@@ -9,4 +9,7 @@ public class SwitchScene : MonoBehaviour
     public void Switch(int index){
         SceneManager.LoadScene(index);
     }
+    public void Switch(string name){
+        SceneManager.LoadScene(name);
+    }
 }

@@ -12,25 +12,22 @@ public enum FishState{
 /// </summary>
 public partial class Fish : MonoBehaviour
 {
-    public GameObject Nemo;
     public int level;
     public int score; //Điểm ghi được khi bị Nemo ăn
     public float speed, range; //range: tầm phát hiện của Fish
+    public SpriteRenderer ren;
     [HideInInspector] public FishState fishState = FishState.Idle;
     Vector3 diff; //different between Player and this Fish
-    Vector3 direction;
-    // Start is called before the first frame update
-    void Start()
-    {
-        direction = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0);
+    public Vector3 dir;
+    
+    void Start(){
+        dir = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0);
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
         if (CheckOutOfBound()){Destroy(this.gameObject);}
         HandlingState();
-        Debug.Log(fishState);
         switch(fishState){
             case FishState.Idle:
                 ChillFish();
@@ -46,8 +43,8 @@ public partial class Fish : MonoBehaviour
     bool CheckOutOfBound(int tolerance = 3){
         Vector3 pos = transform.position;
         GameManager g = GameManager.Instance;
-        if ((pos.x < g.minBounds.x - tolerance && pos.x > g.maxBounds.x + tolerance) ||
-        (pos.y < g.minBounds.y - tolerance && pos.y > g.maxBounds.y + tolerance)){
+        if (pos.x < g.minBounds.x - tolerance || pos.x > g.maxBounds.x + tolerance ||
+        pos.y < g.minBounds.y - tolerance || pos.y > g.maxBounds.y + tolerance){
             return true;
         }
         return false;
@@ -67,25 +64,35 @@ public partial class Fish : MonoBehaviour
         }
     }
     void Move(float multiplier = 1f){
-        transform.Translate(direction.normalized*Time.deltaTime*speed);
-        if (direction.x > 0)
+        transform.Translate(dir.normalized*Time.deltaTime*speed);
+        if (dir.x > 0) // Moving right
         {
-            Vector3 oldScale = transform.localScale;
-            if (oldScale.x > 0){
+            Vector3 oldScale = ren.transform.localScale;
+            if (oldScale.x < 0) // If facing left, flip to right
+            {
                 oldScale.x *= -1;
             }
-            transform.localScale = oldScale;
+            ren.transform.localScale = oldScale;
         }
-        else if (direction.x < 0)
+        else if (dir.x < 0) // Moving left
         {
-            Vector3 oldScale = transform.localScale;
-            if (oldScale.x < 0){
+            Vector3 oldScale = ren.transform.localScale;
+            if (oldScale.x > 0) // If facing right, flip to left
+            {
                 oldScale.x *= -1;
             }
-            transform.localScale = oldScale;
+            ren.transform.localScale = oldScale;
+        }
+
+    }
+    public void SetMainDirection(bool isMoveToTheRight){
+        if (isMoveToTheRight){
+            dir = new Vector3(5, 0, 0);
+        }
+        else{
+            dir = new Vector3(-5, 0, 0);
         }
     }
-
 
 
 }
