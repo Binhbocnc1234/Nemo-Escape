@@ -1369,13 +1369,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904172229}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.573833, y: 0.9775462, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.57058, y: 0.9775462, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 385879798}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1272819175}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &983521924
 GameObject:
@@ -1754,6 +1754,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1896606061}
+  - {fileID: 904172231}
   - {fileID: 1164648880}
   - {fileID: 1168377235}
   - {fileID: 1210139909}
@@ -2079,7 +2080,7 @@ GameObject:
   - component: {fileID: 1923582907}
   - component: {fileID: 1923582908}
   m_Layer: 0
-  m_Name: fish tank other stuff_2
+  m_Name: LED light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2167,6 +2168,10 @@ PrefabInstance:
     - target: {fileID: 1069606672188838021, guid: 54fa79aa69b6f50488471c951d3bda82, type: 3}
       propertyPath: m_Name
       value: Level set up
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069606672188838021, guid: 54fa79aa69b6f50488471c951d3bda82, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1111824872321828987, guid: 54fa79aa69b6f50488471c951d3bda82, type: 3}
       propertyPath: m_Name
@@ -2303,4 +2308,3 @@ SceneRoots:
   m_Roots:
   - {fileID: 1314539425458185001}
   - {fileID: 1272819175}
-  - {fileID: 904172231}
