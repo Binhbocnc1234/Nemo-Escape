@@ -4,11 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem.XR;
 
 
-public class RandomModule : MonoBehaviour{
-
-    public RandomModule(){
-
-    }
+public class RandomModule{
 
     public float RandomBetween(float first, float second){
         return Random.Range(first, second);

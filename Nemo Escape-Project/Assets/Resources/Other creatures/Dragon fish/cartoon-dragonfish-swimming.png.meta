@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4779b020dd380cb4794cf22a5f8c87fa
+guid: 8df8630ca16eb214caf1daeaafe55516
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cartoon-neonfish-swimming_0
+      name: cartoon-dragonfish-swimming_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 200
-        height: 102
+        width: 1000
+        height: 408
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,104 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c174ebd2093ea24fa4ad9eeed65f7ce
-      internalID: -352327114
+      spriteID: 3577a84c942cbef47adc1fafa6bb35c6
+      internalID: -25001817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cartoon-neonfish-swimming_1
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 0
-        width: 200
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5466381136b18bd46a5e46095129a5cb
-      internalID: -1329676103
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cartoon-neonfish-swimming_2
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 0
-        width: 200
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c78fd1b675c51b4da63416eecbb3d2c
-      internalID: -2017346759
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cartoon-neonfish-swimming_3
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 0
-        width: 200
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f7d333a965b79c45bc70a0797a61878
-      internalID: -146574598
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cartoon-neonfish-swimming_4
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 0
-        width: 200
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e6d377b60bf3ec4999a0d93d6c88bac
-      internalID: 1715844262
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cartoon-neonfish-swimming_5
+      name: cartoon-dragonfish-swimming_1
       rect:
         serializedVersion: 2
         x: 1000
         y: 0
-        width: 200
-        height: 102
+        width: 1000
+        height: 408
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ac0b00c6eaa5074e86318c641036d16
-      internalID: -888360763
+      spriteID: 1fdaf4e2ed230324c8616c12a8e73cad
+      internalID: 40674949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cartoon-neonfish-swimming_6
+      name: cartoon-dragonfish-swimming_2
       rect:
         serializedVersion: 2
-        x: 1200
+        x: 2000
         y: 0
-        width: 200
-        height: 102
+        width: 1000
+        height: 408
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a13c9f5712bec8459e5e2df1c2b5aaa
-      internalID: -505464821
+      spriteID: 570292959d6911b40a45d366635493c6
+      internalID: -1528253378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cartoon-neonfish-swimming_7
+      name: cartoon-dragonfish-swimming_3
       rect:
         serializedVersion: 2
-        x: 1400
+        x: 3000
         y: 0
-        width: 200
-        height: 102
+        width: 1000
+        height: 408
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,8 +187,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57b91682b3fe13a4e927afcd28c9b0b6
-      internalID: 1364420910
+      spriteID: 918fc7f4edf818b46ae55db78422dd39
+      internalID: 1900540397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cartoon-dragonfish-swimming_4
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 1000
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bdab9aeef7f5d740bafe27f47d0251e
+      internalID: 2086325855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cartoon-dragonfish-swimming_5
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 0
+        width: 1000
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5167429eaf160048bdac8b1453a89ad
+      internalID: 1106570096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cartoon-dragonfish-swimming_6
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 0
+        width: 1000
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3da832618480b8749a571c06e5367fa0
+      internalID: -1864729396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cartoon-dragonfish-swimming_7
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 0
+        width: 1000
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3ab7934805d0d4458b6c1372b63bb27
+      internalID: 2093795200
       vertices: []
       indices: 
       edges: []
@@ -288,14 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cartoon-neonfish-swimming_0: -352327114
-      cartoon-neonfish-swimming_1: -1329676103
-      cartoon-neonfish-swimming_2: -2017346759
-      cartoon-neonfish-swimming_3: -146574598
-      cartoon-neonfish-swimming_4: 1715844262
-      cartoon-neonfish-swimming_5: -888360763
-      cartoon-neonfish-swimming_6: -505464821
-      cartoon-neonfish-swimming_7: 1364420910
+      cartoon-dragonfish-swimming_0: -25001817
+      cartoon-dragonfish-swimming_1: 40674949
+      cartoon-dragonfish-swimming_2: -1528253378
+      cartoon-dragonfish-swimming_3: 1900540397
+      cartoon-dragonfish-swimming_4: 2086325855
+      cartoon-dragonfish-swimming_5: 1106570096
+      cartoon-dragonfish-swimming_6: -1864729396
+      cartoon-dragonfish-swimming_7: 2093795200
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -22,10 +22,11 @@ public partial class Fish : MonoBehaviour{
 
     [HideInInspector] public FishState fishState = FishState.Idle;
     Vector3 diff; //different between Player and this Fish
-    public Vector3 dir;
+    public Vector3 dir = Vector3.zero;
     
     void Start(){
-        dir = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0);
+        if (dir == null)
+            dir = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0);
     }
 
     // Update is called once per frame

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4779b020dd380cb4794cf22a5f8c87fa
+guid: 0c64d8b5424aa1e42b37e23feec430be
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cartoon-neonfish-swimming_0
+      name: cartoon-angelfish-swimming_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 200
-        height: 102
+        width: 400
+        height: 204
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,41 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c174ebd2093ea24fa4ad9eeed65f7ce
-      internalID: -352327114
+      spriteID: 3e729f3baf85ff849811a1d60448ba85
+      internalID: 953248976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cartoon-neonfish-swimming_1
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 0
-        width: 200
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5466381136b18bd46a5e46095129a5cb
-      internalID: -1329676103
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cartoon-neonfish-swimming_2
+      name: cartoon-angelfish-swimming_1
       rect:
         serializedVersion: 2
         x: 400
         y: 0
-        width: 200
-        height: 102
+        width: 400
+        height: 204
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,41 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c78fd1b675c51b4da63416eecbb3d2c
-      internalID: -2017346759
+      spriteID: c3b9f700e70c29344a6068d489f8d428
+      internalID: -1307651314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cartoon-neonfish-swimming_3
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 0
-        width: 200
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f7d333a965b79c45bc70a0797a61878
-      internalID: -146574598
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cartoon-neonfish-swimming_4
+      name: cartoon-angelfish-swimming_2
       rect:
         serializedVersion: 2
         x: 800
         y: 0
-        width: 200
-        height: 102
+        width: 400
+        height: 204
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,41 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e6d377b60bf3ec4999a0d93d6c88bac
-      internalID: 1715844262
+      spriteID: 930281a8ac7c9264b92efad335264251
+      internalID: -2005384501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cartoon-neonfish-swimming_5
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 200
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ac0b00c6eaa5074e86318c641036d16
-      internalID: -888360763
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cartoon-neonfish-swimming_6
+      name: cartoon-angelfish-swimming_3
       rect:
         serializedVersion: 2
         x: 1200
         y: 0
-        width: 200
-        height: 102
+        width: 400
+        height: 204
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a13c9f5712bec8459e5e2df1c2b5aaa
-      internalID: -505464821
+      spriteID: ee0bf007c7d65a640984f93ebd9ac9c4
+      internalID: -962234735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cartoon-neonfish-swimming_7
+      name: cartoon-angelfish-swimming_4
       rect:
         serializedVersion: 2
-        x: 1400
+        x: 1600
         y: 0
-        width: 200
-        height: 102
+        width: 400
+        height: 204
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,8 +208,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57b91682b3fe13a4e927afcd28c9b0b6
-      internalID: 1364420910
+      spriteID: b8a452b82a0ed95418fca9626c51c077
+      internalID: -946354834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cartoon-angelfish-swimming_5
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 400
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8fef7cad9c66c645ae375a6d2ab1eca
+      internalID: -585251281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cartoon-angelfish-swimming_6
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 400
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f3c567407083c4b8eaafe95788ea8c
+      internalID: -1054048088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cartoon-angelfish-swimming_7
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 0
+        width: 400
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84989fcf4e59c784095265f1ed217256
+      internalID: -864046590
       vertices: []
       indices: 
       edges: []
@@ -288,14 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cartoon-neonfish-swimming_0: -352327114
-      cartoon-neonfish-swimming_1: -1329676103
-      cartoon-neonfish-swimming_2: -2017346759
-      cartoon-neonfish-swimming_3: -146574598
-      cartoon-neonfish-swimming_4: 1715844262
-      cartoon-neonfish-swimming_5: -888360763
-      cartoon-neonfish-swimming_6: -505464821
-      cartoon-neonfish-swimming_7: 1364420910
+      cartoon-angelfish-swimming_0: 953248976
+      cartoon-angelfish-swimming_1: -1307651314
+      cartoon-angelfish-swimming_2: -2005384501
+      cartoon-angelfish-swimming_3: -962234735
+      cartoon-angelfish-swimming_4: -946354834
+      cartoon-angelfish-swimming_5: -585251281
+      cartoon-angelfish-swimming_6: -1054048088
+      cartoon-angelfish-swimming_7: -864046590
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

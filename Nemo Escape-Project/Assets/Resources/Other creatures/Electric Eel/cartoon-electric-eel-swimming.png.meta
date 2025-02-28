@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4779b020dd380cb4794cf22a5f8c87fa
+guid: d05b5724329e367499ae03c284d9f787
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cartoon-neonfish-swimming_0
+      name: cartoon-electric-eel-swimming_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 200
-        height: 102
+        width: 1000
+        height: 408
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,104 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c174ebd2093ea24fa4ad9eeed65f7ce
-      internalID: -352327114
+      spriteID: e92140b1e9615a04080a28f554d511ef
+      internalID: 1748896669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cartoon-neonfish-swimming_1
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 0
-        width: 200
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5466381136b18bd46a5e46095129a5cb
-      internalID: -1329676103
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cartoon-neonfish-swimming_2
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 0
-        width: 200
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c78fd1b675c51b4da63416eecbb3d2c
-      internalID: -2017346759
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cartoon-neonfish-swimming_3
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 0
-        width: 200
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f7d333a965b79c45bc70a0797a61878
-      internalID: -146574598
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cartoon-neonfish-swimming_4
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 0
-        width: 200
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e6d377b60bf3ec4999a0d93d6c88bac
-      internalID: 1715844262
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cartoon-neonfish-swimming_5
+      name: cartoon-electric-eel-swimming_1
       rect:
         serializedVersion: 2
         x: 1000
         y: 0
-        width: 200
-        height: 102
+        width: 1000
+        height: 408
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ac0b00c6eaa5074e86318c641036d16
-      internalID: -888360763
+      spriteID: c4ab8f6c58912fc44a28c3e28b045c1a
+      internalID: 32310037
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cartoon-neonfish-swimming_6
+      name: cartoon-electric-eel-swimming_2
       rect:
         serializedVersion: 2
-        x: 1200
+        x: 2000
         y: 0
-        width: 200
-        height: 102
+        width: 1000
+        height: 408
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a13c9f5712bec8459e5e2df1c2b5aaa
-      internalID: -505464821
+      spriteID: 1e66589afd47c6740ab8251d85b61d50
+      internalID: -347016582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cartoon-neonfish-swimming_7
+      name: cartoon-electric-eel-swimming_3
       rect:
         serializedVersion: 2
-        x: 1400
+        x: 3000
         y: 0
-        width: 200
-        height: 102
+        width: 1000
+        height: 408
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,8 +187,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57b91682b3fe13a4e927afcd28c9b0b6
-      internalID: 1364420910
+      spriteID: d1e7ee62d9afe9744b9661706a42a6a0
+      internalID: -1089282426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cartoon-electric-eel-swimming_4
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 1000
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaddb88d10777c24ba9ad12dd15c3982
+      internalID: 1987901537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cartoon-electric-eel-swimming_5
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 0
+        width: 1000
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34568e031a869614ea652e4512e9b9a5
+      internalID: -1178329727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cartoon-electric-eel-swimming_6
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 0
+        width: 1000
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10bf5d64da5458648a71c8b90d09d32d
+      internalID: -456081992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cartoon-electric-eel-swimming_7
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 0
+        width: 1000
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc49bb4af3df71d4f88f3229ee64d707
+      internalID: -1364856119
       vertices: []
       indices: 
       edges: []
@@ -288,14 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cartoon-neonfish-swimming_0: -352327114
-      cartoon-neonfish-swimming_1: -1329676103
-      cartoon-neonfish-swimming_2: -2017346759
-      cartoon-neonfish-swimming_3: -146574598
-      cartoon-neonfish-swimming_4: 1715844262
-      cartoon-neonfish-swimming_5: -888360763
-      cartoon-neonfish-swimming_6: -505464821
-      cartoon-neonfish-swimming_7: 1364420910
+      cartoon-electric-eel-swimming_0: 1748896669
+      cartoon-electric-eel-swimming_1: 32310037
+      cartoon-electric-eel-swimming_2: -347016582
+      cartoon-electric-eel-swimming_3: -1089282426
+      cartoon-electric-eel-swimming_4: 1987901537
+      cartoon-electric-eel-swimming_5: -1178329727
+      cartoon-electric-eel-swimming_6: -456081992
+      cartoon-electric-eel-swimming_7: -1364856119
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

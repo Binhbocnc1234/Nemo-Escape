@@ -21,7 +21,6 @@ public class Bubble : MonoBehaviour
 
     }
     public void EndExplode(){
-        Debug.Log("Explode");
         Destroy(this.gameObject);
     }
 }
