@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MyCamera : Singleton<MyCamera>
+public class MyCamera : MonoBehaviour
 {
     Player player;
     public Vector3 offset = new Vector3(0, 0, -10);
@@ -13,8 +13,7 @@ public class MyCamera : Singleton<MyCamera>
 
     void LateUpdate()
     {
-        if (player != null)
-        {
+        if (player != null){
             Vector3 targetPosition = player.transform.position + offset;
             transform.position = Vector3.Lerp(transform.position, targetPosition, smoothSpeed * Time.deltaTime);
             targetFOV = Mathf.Lerp(Camera.main.fieldOfView , targetFOV, smoothSpeed*Time.deltaTime);
