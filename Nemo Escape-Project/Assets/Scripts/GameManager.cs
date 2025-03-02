@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>{
     public int level;
-    
     List<Level> levelContainer;
     public Vector2 minBounds = new Vector2(-10f, -5f); // Minimum X, Y position
     public Vector2 maxBounds = new Vector2(10f, 5f);  // Maximum X, Y position
@@ -18,6 +18,7 @@ public class GameManager : Singleton<GameManager>{
             new Level("Chimelong Ocean Kingdom", 1000, Creature.ElectriclEel),
             new Level("Black Sea", 1500, Creature.KillerWhale)
         };
+        SceneManager.LoadScene($"Level {level} Enviroment", LoadSceneMode.Additive);
     }
 
     // Update is called once per frame
@@ -28,8 +29,12 @@ public class GameManager : Singleton<GameManager>{
     public void Win(){
         PlayerPrefs.SetInt("level", Player.Instance.level);
     }
-    public void Lose(){
+    public IEnumerator Lose(){
         Debug.Log("Player lose");
+        SceneManager.LoadScene("Sorry", LoadSceneMode.Additive);
+        yield return new WaitForSeconds(3.5f);
+        SceneManager.LoadScene("Try Again");
+        yield return null;
     }
     public void Pause(){
         Time.timeScale = 0;

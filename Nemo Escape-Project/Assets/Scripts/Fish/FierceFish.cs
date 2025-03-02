@@ -13,10 +13,12 @@ public partial class Fish : MonoBehaviour{
         if (diff.magnitude <= 0.3f && this.level > Player.Instance.level){
             fishState = FishState.Eat;
             Destroy(Player.Instance.gameObject);
+            GameManager.Instance.Lose();
         }
     }
-    public void EndEat(){
+    private IEnumerator ReturnToIdle()
+    {
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         fishState = FishState.Idle;
-
     }
 }

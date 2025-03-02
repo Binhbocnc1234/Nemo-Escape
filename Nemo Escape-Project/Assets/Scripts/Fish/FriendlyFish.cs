@@ -11,7 +11,7 @@ public partial class Fish : MonoBehaviour
         Move();
 
         if (timer.Count()){
-            dir += new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0);
+            dir += new Vector2(Random.Range(-1, 1), Random.Range(-1, 1));
         }
         
     }

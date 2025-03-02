@@ -22,18 +22,21 @@ public partial class Fish : MonoBehaviour{
 
     [HideInInspector] public FishState fishState = FishState.Idle;
     Vector3 diff; //different between Player and this Fish
-    public Vector3 dir = Vector3.zero;
+    public Vector2 dir = Vector2.zero;
     
     void Start(){
         if (dir == null)
-            dir = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0);
-    }
-
+            dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+    } 
     // Update is called once per frame
     void Update(){
         if (CheckOutOfBound()){Destroy(this.gameObject);}
         HandlingState();
         switch(fishState){
+            case FishState.Eat:
+                animator.Play("Eat");
+                ReturnToIdle();
+                break;
             case FishState.Idle:
                 ChillFish();
                 break;
@@ -44,6 +47,7 @@ public partial class Fish : MonoBehaviour{
                 Escape();
                 break;
         }
+        CheckNemo();
     }
     bool CheckOutOfBound(int tolerance = 3){
         Vector3 pos = transform.position;
@@ -72,21 +76,21 @@ public partial class Fish : MonoBehaviour{
         transform.Translate(dir.normalized*Time.deltaTime*speed);
         if (dir.x > 0) // Moving right
         {
-            Vector3 oldScale = ren.transform.localScale;
+            Vector3 oldScale = transform.localScale;
             if (oldScale.x < 0) // If facing left, flip to right
             {
                 oldScale.x *= -1;
             }
-            ren.transform.localScale = oldScale;
+            transform.localScale = oldScale;
         }
         else if (dir.x < 0) // Moving left
         {
-            Vector3 oldScale = ren.transform.localScale;
+            Vector3 oldScale = transform.localScale;
             if (oldScale.x > 0) // If facing right, flip to left
             {
                 oldScale.x *= -1;
             }
-            ren.transform.localScale = oldScale;
+            transform.localScale = oldScale;
         }
 
     }
