@@ -2363,7 +2363,7 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
+  m_FalloffIntensity: 0.45
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 3.3
   m_LightVolumeIntensity: 1
@@ -2384,10 +2384,10 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 113.17
-  m_PointLightOuterAngle: 360
+  m_PointLightInnerAngle: 108.1
+  m_PointLightOuterAngle: 113.74
   m_PointLightInnerRadius: 4.1137156
-  m_PointLightOuterRadius: 35.368954
+  m_PointLightOuterRadius: 36.28088
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -2406,8 +2406,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569690339}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.9999995, w: -0.0009744615}
-  m_LocalPosition: {x: 4.3, y: 8.6, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.99997485, w: -0.0070978785}
+  m_LocalPosition: {x: 4.7, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
