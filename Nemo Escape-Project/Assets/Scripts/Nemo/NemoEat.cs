@@ -18,8 +18,8 @@ public class NemoEat : MonoBehaviour
         foreach(Transform child in ObjectRef.Instance.fishContainer){
             Fish fish = child.GetComponent<Fish>();
             float dist = Vector3.Distance(child.position, mouth.position);
-            
-            if (dist <= eatRadius){
+            // Debug.Log(dist);
+            if (fish.level <= Player.Instance.level && dist <= eatRadius){
                 Player.Instance.exp += fish.score;
                 PlayerInfoUI.Instance.SetNewExp();
                 Player.Instance.GetComponent<Entity>().GetHealth(fish.score);
@@ -29,5 +29,4 @@ public class NemoEat : MonoBehaviour
             }
         }
     }
-    
 }

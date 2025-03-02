@@ -93,25 +93,23 @@ public class Wave : MonoBehaviour{
         switch(waveLevel){
             // Fish tank
             case 1:
-                
                 RandomModule randoms = new RandomModule();
                 if(Player.Instance.level < 5){
                     if(timer.Count()){
-                        Debug.Log("Spawn");
+                        // Debug.Log("Spawn");
                         GameObject random = GetRandomObject(level1);
+                        var instance = GameManager.Instance; 
+                        Transform fishContainer = ObjectRef.Instance.fishContainer;
+                        float random_Y = randoms.RandomBetween(instance.minBounds.y, instance.maxBounds.y);
                         // Random point to be spawn, left or right
                         if(randoms.RadomOneTwo()){
-                            var instance = GameManager.Instance; 
-                            float random_Y = randoms.RandomBetween(instance.minBounds.y, instance.maxBounds.y);
                             Vector3 pos = new Vector3(instance.minBounds.x, random_Y, 0f);
-                            GameObject clone = Instantiate(random, pos, Quaternion.identity);
+                            GameObject clone = Instantiate(random, pos, Quaternion.identity, fishContainer);
                             clone.GetComponent<Fish>().SetMainDirection(true);
                         }
                         else{
-                            var instance = GameManager.Instance; 
-                            float random_Y = randoms.RandomBetween(instance.minBounds.y, instance.maxBounds.y);
                             Vector3 pos = new Vector3(instance.maxBounds.x, random_Y, 0f);
-                            GameObject clone = Instantiate(random, pos, Quaternion.identity);
+                            GameObject clone = Instantiate(random, pos, Quaternion.identity, fishContainer);
                             clone.GetComponent<Fish>().SetMainDirection(false);
                         }
 
@@ -132,8 +130,5 @@ public class Wave : MonoBehaviour{
 
 
     }
-
-
-
 
 }
