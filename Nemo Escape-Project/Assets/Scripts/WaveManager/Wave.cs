@@ -7,10 +7,6 @@ using UnityEngine.InputSystem.XR;
 
 
 public class Wave : MonoBehaviour{
-
-    int[] chance = new int[4] {10, 20, 30, 40};
-    
-    
     public List<GameObject> level1 = new List<GameObject>();
     protected List<GameObject> level2 = new List<GameObject>();
     protected List<GameObject> level3 = new List<GameObject>();
@@ -70,8 +66,11 @@ public class Wave : MonoBehaviour{
     protected GameObject GetRandomObject(List<GameObject> objects){
         int closestIndex = Mathf.Clamp(Player.Instance.level - 1, 0, 3);
 
-        float[] percent = new float[4] { 20f, 20f, 20f, 20f };
-        percent[closestIndex] = 40f;
+        Debug.Log(Player.Instance.level);
+        Debug.Log(closestIndex);
+
+        float[] percent = new float[4] { 10f, 10f, 10f, 10f };
+        percent[closestIndex] = 70f;
 
         // Random chọn GameObject theo tỷ lệ
         float randomValue = Random.Range(0f, 100f);
