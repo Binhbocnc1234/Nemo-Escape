@@ -16,9 +16,9 @@ public class Wave : MonoBehaviour{
 
     // Field
     public int level;
-    public float time_count = 1f;
+    public float time_count = 0.75f;
     public GameObject container;
-    Timer timer = new Timer(1f);
+    Timer timer;
     
     // When you click choose level button, it'll call singleton to change WaveLevel
     [HideInInspector] public int waveLevel = 1;
@@ -48,7 +48,7 @@ public class Wave : MonoBehaviour{
     }
     public void Start(){
 
-        
+        timer = new Timer(time_count);
         Add("Level1", level1);
         // Add("Level2", level2);
         // Add("Level3", level3);
@@ -64,16 +64,43 @@ public class Wave : MonoBehaviour{
     }
 
     protected GameObject GetRandomObject(List<GameObject> objects){
-        int closestIndex = Mathf.Clamp(Player.Instance.level - 1, 0, 3);
 
-        Debug.Log(Player.Instance.level);
-        Debug.Log(closestIndex);
+        int n = objects.Count;
 
-        float[] percent = new float[4] { 10f, 10f, 10f, 10f };
-        percent[closestIndex] = 70f;
+        // int closestIndex = Mathf.Clamp(Player.Instance.level - 1, 0, n - 1);
+        int player_level = Player.Instance.level;
+        int closestIndex = 0;
+        int diff = 10000001;
+
+        for(int i = 0; i < n; i++){
+
+            int fish_lvel = objects[i].GetComponent<Fish>().level;
+
+            if(diff > System.Math.Abs(player_level - fish_lvel)){
+                closestIndex = i;
+                diff = System.Math.Abs(player_level - fish_lvel);
+            }
+
+        }
+
+        // Debug.Log(Player.Instance.level);
+        // Debug.Log(closestIndex);
+        float sum = 60f;
+        float[] percent = new float[n];
+        percent[closestIndex] = 60f;
+
+        for(int i = 0; i < closestIndex; i++){
+            percent[i] = 10f;
+            sum += 10f;
+        }
+
+        for(int i = closestIndex + 1; i < n; i++){
+            percent[i] = 20f;
+            sum += 20f;
+        }
 
         // Random chọn GameObject theo tỷ lệ
-        float randomValue = Random.Range(0f, 100f);
+        float randomValue = Random.Range(0f, sum);
         float cumulative = 0f;
 
         for (int i = 0; i < 4; i++){
