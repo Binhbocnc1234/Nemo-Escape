@@ -10,7 +10,7 @@ public enum Creature{
     PinkNeon,
     AngelFish,
     DragonFish,
-    ElectriclEel, // 
+    ElectriclEel, 
     Shark,
     BlueDragonFish,
     GreatWhiteShark,

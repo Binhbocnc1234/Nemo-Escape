@@ -7,6 +7,7 @@ public enum FishState{
     Attack,
     Escape,
     Eat,
+    Bored,
 }
 /// <summary>
 /// A script used by Nemo and other fish
@@ -31,13 +32,17 @@ public partial class Fish : MonoBehaviour{
     // Update is called once per frame
     void Update(){
         if (CheckOutOfBound()){Destroy(this.gameObject);}
-        HandlingState();
+        
         switch(fishState){
+            case FishState.Bored:
+                Move(1.5f);
+                break;
             case FishState.Eat:
                 animator.Play("Eat");
-                ReturnToIdle();
+                StartCoroutine(ReturnToIdle());
                 break;
             case FishState.Idle:
+                HandlingState();
                 ChillFish();
                 break;
             case FishState.Attack:
@@ -47,6 +52,7 @@ public partial class Fish : MonoBehaviour{
                 Escape();
                 break;
         }
+        // StartCoroutine(SelfDestroy(8));
         CheckNemo();
     }
     bool CheckOutOfBound(int tolerance = 3){
@@ -102,6 +108,9 @@ public partial class Fish : MonoBehaviour{
             dir = new Vector3(-5, 0, 0);
         }
     }
-
+    IEnumerator SelfDestroy(int time){
+        yield return new WaitForSeconds(time);
+        Destroy(this.gameObject);
+    }
 
 }
