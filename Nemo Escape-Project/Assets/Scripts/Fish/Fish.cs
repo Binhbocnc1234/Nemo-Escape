@@ -20,9 +20,10 @@ public partial class Fish : MonoBehaviour{
 
     public SpriteRenderer ren;
     public Animator animator;
+    public GameObject mouth;
 
     [HideInInspector] public FishState fishState = FishState.Idle;
-    Vector3 diff; //different between Player and this Fish
+    Vector2 diff; //different between Player and this Fish
     public Vector2 dir = Vector2.zero;
     
     void Start(){
@@ -32,14 +33,16 @@ public partial class Fish : MonoBehaviour{
     // Update is called once per frame
     void Update(){
         if (CheckOutOfBound()){Destroy(this.gameObject);}
-        
+        if (Player.Instance == null){
+            ChillFish();
+            return;
+        }
         switch(fishState){
             case FishState.Bored:
                 Move(1.5f);
                 break;
             case FishState.Eat:
                 animator.Play("Eat");
-                StartCoroutine(ReturnToIdle());
                 break;
             case FishState.Idle:
                 HandlingState();
@@ -52,7 +55,7 @@ public partial class Fish : MonoBehaviour{
                 Escape();
                 break;
         }
-        // StartCoroutine(SelfDestroy(8));
+        StartCoroutine(SelfDestroy(8));
         CheckNemo();
     }
     bool CheckOutOfBound(int tolerance = 3){
@@ -110,7 +113,7 @@ public partial class Fish : MonoBehaviour{
     }
     IEnumerator SelfDestroy(int time){
         yield return new WaitForSeconds(time);
-        Destroy(this.gameObject);
+        fishState = FishState.Bored;
     }
 
 }
