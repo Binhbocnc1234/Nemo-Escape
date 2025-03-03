@@ -188,6 +188,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5376656170952194637, guid: 54fa79aa69b6f50488471c951d3bda82, type: 3}
+      propertyPath: level
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376656170952194637, guid: 54fa79aa69b6f50488471c951d3bda82, type: 3}
       propertyPath: maxBounds.x
       value: 18.5
       objectReference: {fileID: 0}
