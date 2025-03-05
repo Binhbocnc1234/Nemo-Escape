@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MyCamera : MonoBehaviour
+public class MyCamera : Singleton<MyCamera>
 {
     Player player;
     public Vector3 offset = new Vector3(0, 0, -10);

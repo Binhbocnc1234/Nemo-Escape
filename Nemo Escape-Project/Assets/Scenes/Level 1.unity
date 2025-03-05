@@ -172,6 +172,17 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &1208193032 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5341929763305119645, guid: 54fa79aa69b6f50488471c951d3bda82, type: 3}
+  m_PrefabInstance: {fileID: 1314539425458185001}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1314539425458185001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -180,6 +191,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 824860317678293500, guid: 54fa79aa69b6f50488471c951d3bda82, type: 3}
+      propertyPath: tmp
+      value: 
+      objectReference: {fileID: 1208193032}
     - target: {fileID: 1069606672188838021, guid: 54fa79aa69b6f50488471c951d3bda82, type: 3}
       propertyPath: m_Name
       value: Level set up

@@ -103,7 +103,7 @@ public class Wave : MonoBehaviour{
         float randomValue = Random.Range(0f, sum);
         float cumulative = 0f;
 
-        for (int i = 0; i < 4; i++){
+        for (int i = 0; i < n; i++){
             cumulative += percent[i];
             if (randomValue <= cumulative){
                 return objects[i];
@@ -115,43 +115,28 @@ public class Wave : MonoBehaviour{
 
     
     protected void Spawn(){
-        
-        switch(waveLevel){
-            // Fish tank
-            case 1:
-                RandomModule randoms = new RandomModule();
-                if(Player.Instance.level < 5){
-                    if(timer.Count()){
-                        // Debug.Log("Spawn");
-                        GameObject random = GetRandomObject(level1);
-                        var instance = GameManager.Instance; 
-                        Transform fishContainer = ObjectRef.Instance.fishContainer;
-                        float random_Y = randoms.RandomBetween(instance.minBounds.y, instance.maxBounds.y);
-                        // Random point to be spawn, left or right
-                        if(randoms.RadomOneTwo()){
-                            Vector3 pos = new Vector3(instance.minBounds.x, random_Y, 0f);
-                            GameObject clone = Instantiate(random, pos, Quaternion.identity, fishContainer);
-                            clone.GetComponent<Fish>().SetMainDirection(true);
-                        }
-                        else{
-                            Vector3 pos = new Vector3(instance.maxBounds.x, random_Y, 0f);
-                            GameObject clone = Instantiate(random, pos, Quaternion.identity, fishContainer);
-                            clone.GetComponent<Fish>().SetMainDirection(false);
-                        }
-
-                    }
+     
+        RandomModule randoms = new RandomModule();
+        if(timer.Count()){
+                // Debug.Log("Spawn");
+                GameObject random = GetRandomObject(level1);
+                var instance = GameManager.Instance; 
+                Transform fishContainer = ObjectRef.Instance.fishContainer;
+                float random_Y = randoms.RandomBetween(instance.minBounds.y, instance.maxBounds.y);
+                // Random point to be spawn, left or right
+                if(randoms.RadomOneTwo()){
+                    Vector3 pos = new Vector3(instance.minBounds.x, random_Y, 0f);
+                    GameObject clone = Instantiate(random, pos, Quaternion.identity, fishContainer);
+                    clone.GetComponent<Fish>().SetMainDirection(true);
                 }
-
-                // EndState here
-                break;
-
-            case 2:
-
-                break;
-            case 3:
-
-                break;
+                else{
+                    Vector3 pos = new Vector3(instance.maxBounds.x, random_Y, 0f);
+                    GameObject clone = Instantiate(random, pos, Quaternion.identity, fishContainer);
+                    clone.GetComponent<Fish>().SetMainDirection(false);
+                }
         }
+
+
 
 
 

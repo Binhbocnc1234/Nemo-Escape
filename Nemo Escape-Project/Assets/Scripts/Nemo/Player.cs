@@ -109,6 +109,7 @@ public class Player : Singleton<Player>{
         this.level  = level;
         transform.localScale *= level;
         max_exp = 500 + level*200;
+        MyCamera.Instance.targetFOV = 60*(1 + level*2);
         exp = 0;
         if (entity == null){
             Debug.LogError("Null ref");
