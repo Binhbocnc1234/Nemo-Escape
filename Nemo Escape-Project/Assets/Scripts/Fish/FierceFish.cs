@@ -5,7 +5,7 @@ using UnityEngine;
 
 public partial class Fish : MonoBehaviour{
     // float perseverance = 3f;
-    void Attack(){
+    public virtual void Attack(){
         Move(1.3f);
         dir = (Player.Instance.transform.position - transform.position).normalized;
     }
