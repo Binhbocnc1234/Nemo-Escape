@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 [RequireComponent(typeof(Entity))]
 public class Player : Singleton<Player>{
@@ -14,6 +15,7 @@ public class Player : Singleton<Player>{
 
     public SpriteRenderer ren;
     public Animator animator;
+    public TMP_Text tmp;
     Entity entity;
 
     private Vector2 dir;
@@ -25,6 +27,7 @@ public class Player : Singleton<Player>{
     void Start(){
         entity = GetComponent<Entity>(); //Entity bị trùng với SetLevel
         SetLevel(PlayerPrefs.GetInt("player_level", 1));
+        tmp.text = PlayerPrefs.GetString("name", "Nemo");
     }
     void Update()
     {

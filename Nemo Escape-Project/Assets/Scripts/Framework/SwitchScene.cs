@@ -12,4 +12,7 @@ public class SwitchScene : MonoBehaviour
     public void Switch(string name){
         SceneManager.LoadScene(name);
     }
+    public void ExitApplication(){
+        Application.Quit();
+    }
 }

@@ -18,7 +18,11 @@ public class GameManager : Singleton<GameManager>{
             new Level("Chimelong Ocean Kingdom", 1000, Creature.ElectriclEel),
             new Level("Black Sea", 1500, Creature.KillerWhale)
         };
-        SceneManager.LoadScene($"Level {level} Enviroment", LoadSceneMode.Additive);
+        string sceneName = $"Level {level} Enviroment";
+        Scene scene = SceneManager.GetSceneByName(sceneName);
+        if (!(scene.IsValid() && scene.isLoaded)){
+            SceneManager.LoadScene($"Level {level} Enviroment", LoadSceneMode.Additive);
+        }
     }
 
     // Update is called once per frame
@@ -31,6 +35,7 @@ public class GameManager : Singleton<GameManager>{
     }
     public IEnumerator Lose(){
         Debug.Log("Player lose");
+        PlayerInfoUI.Instance.gameObject.SetActive(false);
         SceneManager.LoadScene("Sorry", LoadSceneMode.Additive);
         yield return new WaitForSeconds(3.5f);
         SceneManager.LoadScene("Try Again");

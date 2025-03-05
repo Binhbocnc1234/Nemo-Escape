@@ -12,7 +12,7 @@ public class EndGameChar : MonoBehaviour
 
     void OnEnable()
     {
-        GetComponent<HarmonicOscillation>().enabled = true;
+        
 
         rectTransform = GetComponent<RectTransform>();
 
@@ -44,7 +44,7 @@ public class EndGameChar : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
+        GetComponent<HarmonicOscillation>().enabled = true;
         // 🔹 **Fix: Ensure the final position and color are set**
         // rectTransform.anchoredPosition = targetPos;
         // charImage.color = targetColor;

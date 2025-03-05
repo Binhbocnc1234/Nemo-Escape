@@ -9,15 +9,9 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         get
         {
-            if (_instance == null)
-            {
-                _instance = FindObjectOfType<T>();
-
-                if (_instance == null)
-                {
-                    GameObject singletonObject = new GameObject(typeof(T).Name);
-                    _instance = singletonObject.AddComponent<T>();
-                }
+            if (_instance == null){
+                Debug.LogError("You haven't created a Singleton of " + typeof(T).Name);
+                return null;
             }
 
             return _instance;
@@ -30,7 +24,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
             _instance = this as T;
         }
         else{
-            Debug.Log("Detect multiple singleton: " + typeof(T).Name);
+            Debug.LogError("Detect multiple singleton: " + typeof(T).Name);
             Destroy(gameObject); // Prevent duplicates
         }
     }
