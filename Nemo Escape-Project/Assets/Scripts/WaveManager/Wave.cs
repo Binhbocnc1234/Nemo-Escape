@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
 
-
-
-
 public class Wave : MonoBehaviour{
     public List<GameObject> level1 = new List<GameObject>();
     protected List<GameObject> level2 = new List<GameObject>();
@@ -65,7 +62,10 @@ public class Wave : MonoBehaviour{
 
     protected GameObject GetRandomObject(List<GameObject> objects){
 
+        
         int n = objects.Count;
+
+        Debug.Log(n);
 
         // int closestIndex = Mathf.Clamp(Player.Instance.level - 1, 0, n - 1);
         int player_level = Player.Instance.level;
@@ -106,6 +106,7 @@ public class Wave : MonoBehaviour{
         for (int i = 0; i < n; i++){
             cumulative += percent[i];
             if (randomValue <= cumulative){
+                Debug.Log(i);
                 return objects[i];
             }
         }

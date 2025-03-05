@@ -6,6 +6,7 @@ using TMPro;
 public class Player : Singleton<Player>{
     public int level;
     public float speed = 5f;
+    public float speed_raw = 5f;
     public float drag = 2f;
     [HideInInspector] public int exp = 0, max_exp = 50;
 
@@ -36,6 +37,7 @@ public class Player : Singleton<Player>{
         if (exp >= max_exp){
             SetLevel(level + 1);
         }
+
         RecordMovement();
         Move();
         ClampPosition(); // Ensure the player stays inside the bounds

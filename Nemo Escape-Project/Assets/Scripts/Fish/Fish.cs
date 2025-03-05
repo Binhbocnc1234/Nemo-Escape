@@ -26,7 +26,7 @@ public partial class Fish : MonoBehaviour{
     Vector2 diff; //different between Player and this Fish
     public Vector2 dir = Vector2.zero;
     
-    void Start(){
+    public virtual void Start(){
         if (dir == null)
             dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
     } 
