@@ -50,8 +50,6 @@ public class Wave : MonoBehaviour{
         // Add("Level2", level2);
         // Add("Level3", level3);
 
-       
-
     }
 
     public void Update(){
@@ -132,12 +130,30 @@ public class Wave : MonoBehaviour{
                         if(randoms.RadomOneTwo()){
                             Vector3 pos = new Vector3(instance.minBounds.x, random_Y, 0f);
                             GameObject clone = Instantiate(random, pos, Quaternion.identity, fishContainer);
-                            clone.GetComponent<Fish>().SetMainDirection(true);
-                        }
+
+                            Fish cloneScript = clone.GetComponent<Fish>();
+                            cloneScript.SetMainDirection(true);
+                            if(cloneScript.Fish_child != null){
+                                for(int i = 0; i < 2; i++){
+                                    GameObject cloneChild = Instantiate(cloneScript.Fish_child, pos, Quaternion.identity, fishContainer);
+                                    cloneChild.GetComponent<Fish>().fishState = FishState.Follow;
+                                    cloneChild.GetComponent<Fish>().Fish_boss = clone;
+                                }
+                            }
+                        }   
                         else{
                             Vector3 pos = new Vector3(instance.maxBounds.x, random_Y, 0f);
                             GameObject clone = Instantiate(random, pos, Quaternion.identity, fishContainer);
-                            clone.GetComponent<Fish>().SetMainDirection(false);
+
+                            Fish cloneScript = clone.GetComponent<Fish>();
+                            cloneScript.SetMainDirection(false);
+                            if(cloneScript.Fish_child != null){
+                                for(int i = 0; i < 2; i++){
+                                    GameObject cloneChild = Instantiate(cloneScript.Fish_child, pos, Quaternion.identity, fishContainer);
+                                    cloneChild.GetComponent<Fish>().fishState = FishState.Follow;
+                                    cloneChild.GetComponent<Fish>().Fish_boss = clone;
+                                }
+                            }
                         }
 
                     }

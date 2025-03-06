@@ -182,6 +182,11 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &894276183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3658001053040455572, guid: 54fa79aa69b6f50488471c951d3bda82, type: 3}
+  m_PrefabInstance: {fileID: 1314539425458185001}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1184280933 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3246228551942834181, guid: 7dd0443b3e7e9f2439af79da22bc2eca, type: 3}
@@ -210,6 +215,8 @@ MonoBehaviour:
   score: 50
   speed: 4.5
   range: 4.5
+  Fish_boss: {fileID: 0}
+  Fish_child: {fileID: 0}
   ren: {fileID: 0}
   animator: {fileID: 0}
   mouth: {fileID: 448940151}
@@ -275,6 +282,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1184280935}
   m_SourcePrefab: {fileID: 100100000, guid: 7dd0443b3e7e9f2439af79da22bc2eca, type: 3}
+--- !u!1 &2006053041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5426524934842070126, guid: 54fa79aa69b6f50488471c951d3bda82, type: 3}
+  m_PrefabInstance: {fileID: 1314539425458185001}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1314539425458185001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -347,6 +359,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4185559357298971011, guid: 54fa79aa69b6f50488471c951d3bda82, type: 3}
+      propertyPath: Fish_boss
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185559357298971011, guid: 54fa79aa69b6f50488471c951d3bda82, type: 3}
+      propertyPath: Fish_child
+      value: 
+      objectReference: {fileID: 2006053041}
+    - target: {fileID: 4307374503301848919, guid: 54fa79aa69b6f50488471c951d3bda82, type: 3}
+      propertyPath: Fish_child
+      value: 
+      objectReference: {fileID: 894276183}
     - target: {fileID: 4607247695974649913, guid: 54fa79aa69b6f50488471c951d3bda82, type: 3}
       propertyPath: eatingRadius
       value: 1
@@ -366,6 +390,14 @@ PrefabInstance:
     - target: {fileID: 4780889826408580788, guid: 54fa79aa69b6f50488471c951d3bda82, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.135
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871539313699621497, guid: 54fa79aa69b6f50488471c951d3bda82, type: 3}
+      propertyPath: Fish_boss
+      value: 
+      objectReference: {fileID: 894276183}
+    - target: {fileID: 7206244729510869999, guid: 54fa79aa69b6f50488471c951d3bda82, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8417538600413132994, guid: 54fa79aa69b6f50488471c951d3bda82, type: 3}
       propertyPath: m_AnchorMax.x
