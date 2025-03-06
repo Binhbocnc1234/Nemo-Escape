@@ -114,11 +114,8 @@ public class Wave : MonoBehaviour{
 
     
     protected void Spawn(){
-        
-        switch(waveLevel){
-            // Fish tank
-            case 1:
-                RandomModule randoms = new RandomModule();
+     
+       RandomModule randoms = new RandomModule();
                 if(Player.Instance.level < 5){
                     if(timer.Count()){
                         // Debug.Log("Spawn");
@@ -158,20 +155,12 @@ public class Wave : MonoBehaviour{
 
                     }
                 }
-
-                // EndState here
-                break;
-
-            case 2:
-
-                break;
-            case 3:
-
-                break;
         }
+
+
 
 
 
     }
 
-}
+
