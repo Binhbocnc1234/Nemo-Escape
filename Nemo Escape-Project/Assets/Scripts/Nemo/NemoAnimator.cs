@@ -14,4 +14,7 @@ public class NemoAnimator : Singleton<NemoAnimator>
     public void EndEat(){
         Player.Instance.isEating = false;
     }
+    public void EndGrow(){
+        Player.Instance.isGrow = false;
+    }
 }

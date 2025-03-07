@@ -5,8 +5,8 @@ using TMPro;
 [RequireComponent(typeof(Entity))]
 public class Player : Singleton<Player>{
     public int level;
-    public float speed = 5f;
-    public float speed_raw = 5f;
+    [HideInInspector] public float speed = 5f;
+    [HideInInspector] public float speed_raw = 5f;
     public float drag = 2f;
     [HideInInspector] public int exp = 0, max_exp = 50;
 
@@ -26,7 +26,6 @@ public class Player : Singleton<Player>{
     [HideInInspector] public bool isTurnAround = false, isEating = false, isGrow = false;
     void Start(){
         entity = GetComponent<Entity>(); //Entity bị trùng với SetLevel
-        SetLevel(PlayerPrefs.GetInt("player_level", 1));
         tmp.text = PlayerPrefs.GetString("name", "Nemo");
     }
     void Update()
@@ -80,11 +79,23 @@ public class Player : Singleton<Player>{
         transform.position = new Vector3(clampedX, clampedY, transform.position.z);
     }
     void HandlingRenderer(){
-        if (dir.x > 0){
-            transform.localScale = new Vector3(-1, 1, 1);
+        if (dir.x > 0) // Moving right
+        {
+            Vector3 oldScale = transform.localScale;
+            if (oldScale.x > 0) // If facing left, flip to right
+            {
+                oldScale.x *= -1;
+            }
+            transform.localScale = oldScale;
         }
-        else{
-            transform.localScale = new Vector3(1, 1, 1);
+        else if (dir.x < 0) // Moving left
+        {
+            Vector3 oldScale = transform.localScale;
+            if (oldScale.x < 0) // If facing right, flip to left
+            {
+                oldScale.x *= -1;
+            }
+            transform.localScale = oldScale;
         }
         if (dir.x*movementHistory.Peek().x < 0){
             animator.Play("Turn around");
@@ -103,16 +114,17 @@ public class Player : Singleton<Player>{
             animator.Play("Idle");
         }
     }
-    public void EndGrow(){
-        isGrow = false;
-    }
     public void SetLevel(int level){
+        Debug.Log($"Level: {level}");
         level = Mathf.Max(1, level);
         this.level  = level;
-        transform.localScale *= level;
-        max_exp = 500 + level*200;
-        MyCamera.Instance.targetFOV = 60*(1 + level*2);
+        speed_raw = 6 + (level)*0.5f;
+        speed = speed_raw;
+        transform.localScale = (new Vector3(1,1,1))*(1 + ((float)level-1)/4f);
+        max_exp = 500 + level*250;
         exp = 0;
+        NemoEat.Instance.eatRadius = 0.4f + (level-1)*0.08f;
+        isGrow = true;
         if (entity == null){
             Debug.LogError("Null ref");
         }

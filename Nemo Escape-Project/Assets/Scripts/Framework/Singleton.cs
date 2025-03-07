@@ -9,10 +9,10 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         get
         {
-            if (_instance == null){
-                Debug.LogError("You haven't created a Singleton of " + typeof(T).Name);
-                return null;
-            }
+            // if (_instance == null){
+            //     Debug.LogError("You haven't created a Singleton of " + typeof(T).Name);
+            //     return null;
+            // }
 
             return _instance;
         }

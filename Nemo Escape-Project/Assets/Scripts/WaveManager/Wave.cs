@@ -12,7 +12,7 @@ public class Wave : MonoBehaviour{
     public static Wave Instance{ get => instance; }
 
     // Field
-    public int level;
+    // public int level;
     public float time_count = 0.75f;
     public GameObject container;
     Timer timer;
@@ -36,9 +36,7 @@ public class Wave : MonoBehaviour{
     }
 
     void Add(string s, List<GameObject> list_entity){
-        Transform child = container.transform.Find(s); 
-
-        foreach (Transform c in child){
+        foreach (Transform c in container.transform){
             list_entity.Add(c.gameObject);
         }
 
@@ -65,7 +63,7 @@ public class Wave : MonoBehaviour{
         
         int n = objects.Count;
 
-        Debug.Log(n);
+        // Debug.Log(n);
 
         // int closestIndex = Mathf.Clamp(Player.Instance.level - 1, 0, n - 1);
         int player_level = Player.Instance.level;
@@ -76,7 +74,7 @@ public class Wave : MonoBehaviour{
 
             int fish_lvel = objects[i].GetComponent<Fish>().level;
 
-            if(diff > System.Math.Abs(player_level - fish_lvel)){
+            if(diff > System.Math.Abs(player_level - fish_lvel) || (diff == System.Math.Abs(player_level - fish_lvel) && player_level > fish_lvel)){
                 closestIndex = i;
                 diff = System.Math.Abs(player_level - fish_lvel);
             }
@@ -106,7 +104,7 @@ public class Wave : MonoBehaviour{
         for (int i = 0; i < n; i++){
             cumulative += percent[i];
             if (randomValue <= cumulative){
-                Debug.Log(i);
+                // Debug.Log(i);
                 return objects[i];
             }
         }
@@ -141,6 +139,18 @@ public class Wave : MonoBehaviour{
 
 
 
+    }
+    public Fish GetBestFish(){
+        Fish highestFish = null;
+        foreach(Transform child in container.transform){
+            Fish f = child.GetComponent<Fish>();
+            if (f.level <= Player.Instance.level){
+                if (highestFish == null || highestFish.level < f.level){
+                    highestFish = f;
+                }
+            }
+        }
+        return highestFish;
     }
 
 }

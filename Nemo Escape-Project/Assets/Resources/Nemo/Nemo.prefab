@@ -491,14 +491,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  speed: 5
+  speed: 7
+  speed_raw: 5
   drag: 0.8
   exp: 0
+  max_exp: 50
   healthLoss: 1
   ren: {fileID: 6160084300433061835}
   animator: {fileID: 8522961490950471179}
+  tmp: {fileID: 6610621459662157903}
   isTurnAround: 0
   isEating: 0
+  isGrow: 0
 --- !u!114 &1693663746327101535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,4 +516,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouth: {fileID: 6148114590996887311}
-  eatRadius: 0.5
+  eatRadius: 1

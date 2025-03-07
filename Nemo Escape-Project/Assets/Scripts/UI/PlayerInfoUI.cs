@@ -14,8 +14,6 @@ public class PlayerInfoUI : Singleton<PlayerInfoUI>
     void Update(){
 
         healthBar.size = pl.GetComponent<Entity>().GetPercent();
-    }
-    public void SetNewExp(){
         expBar.GetComponent<ScrollBarTrigger>().ChangeSize(pl.exp/((float)pl.max_exp));
     }
 }

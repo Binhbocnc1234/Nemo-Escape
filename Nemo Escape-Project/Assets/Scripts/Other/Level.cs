@@ -19,11 +19,12 @@ public enum Creature{
 public class Level
 {
     public string name;
-    public int requiredScore;
+    public int requiredLevel, initLevel;
     public Creature specialCreature;
-    public Level(string name, int requiredScore, Creature specialCreature){
+    public Level(string name, int requiredScore, Creature specialCreature, int initLevel){
         this.name = name;
-        this.requiredScore = requiredScore;
+        this.requiredLevel = requiredScore;
+        this.initLevel = initLevel;
         this.specialCreature = specialCreature;
     } 
 }

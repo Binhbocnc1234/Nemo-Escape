@@ -21,7 +21,7 @@ public class Entity : MonoBehaviour
     }
     public void GetHealth(int ammount){
         health += ammount;
-        ammount = Mathf.Min(ammount, max_health);
+        health = Mathf.Min(health, max_health);
     }
     public float GetPercent(){return health/(float)max_health;}
     void DestroyEntity()

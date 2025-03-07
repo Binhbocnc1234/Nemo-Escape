@@ -10,8 +10,7 @@ public partial class Fish : MonoBehaviour{
         Move(1.3f);
         dir = (Player.Instance.transform.position - transform.position).normalized;
     }
-    void CheckNemo(){
-        
+    void CheckNemo(){  
         if (Vector2.Distance(mouth.transform.position, Player.Instance.transform.position) <= 0.4f && this.level > Player.Instance.level){
             fishState = FishState.Eat;
             Destroy(Player.Instance.gameObject);

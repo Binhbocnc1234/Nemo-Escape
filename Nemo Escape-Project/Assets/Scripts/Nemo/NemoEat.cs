@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NemoEat : MonoBehaviour
+public class NemoEat : Singleton<NemoEat>
 {
     public Transform mouth;
     public float eatRadius = 0.2f;
@@ -21,10 +21,8 @@ public class NemoEat : MonoBehaviour
             // Debug.Log(dist);
             if (fish.level <= Player.Instance.level && dist <= eatRadius){
                 Player.Instance.exp += fish.score;
-                PlayerInfoUI.Instance.SetNewExp();
-                Player.Instance.GetComponent<Entity>().GetHealth(fish.score);
+                Player.Instance.GetComponent<Entity>().GetHealth(fish.score/10);
                 Player.Instance.isEating = true;
-
                 Destroy(fish.gameObject);
             }
         }

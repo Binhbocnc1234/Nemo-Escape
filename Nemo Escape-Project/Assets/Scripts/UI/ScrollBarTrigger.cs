@@ -34,6 +34,9 @@ public class ScrollBarTrigger : MonoBehaviour
 
     public void ChangeSize(float newSize)
     {
+        if (Mathf.Clamp01(newSize) == targetSize){
+            return;
+        }
         targetSize = Mathf.Clamp01(newSize); // Ensure it's between 0 and 1
         StopAllCoroutines();
         StartCoroutine(LerpSize());

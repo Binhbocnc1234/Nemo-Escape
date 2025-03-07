@@ -15,7 +15,7 @@ public enum FishState{
 public partial class Fish : MonoBehaviour{
     public Creature type;
     public int level;
-    public int score; //Điểm ghi được khi bị Nemo ăn
+    [HideInInspector] public int score; //Điểm ghi được khi bị Nemo ăn
     public float speed, range; //range: tầm phát hiện của Fish
 
     public SpriteRenderer ren;
@@ -29,6 +29,7 @@ public partial class Fish : MonoBehaviour{
     public virtual void Start(){
         if (dir == null)
             dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+        score = 50 + level*30;
     } 
     // Update is called once per frame
     void Update(){
