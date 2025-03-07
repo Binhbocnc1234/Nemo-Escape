@@ -8,7 +8,9 @@ public enum FishState{
     Escape,
     Eat,
     Bored,
+    Follow,
 }
+
 /// <summary>
 /// A script used by Nemo and other fish
 /// </summary>
@@ -18,6 +20,9 @@ public partial class Fish : MonoBehaviour{
     [HideInInspector] public int score; //Điểm ghi được khi bị Nemo ăn
     public float speed, range; //range: tầm phát hiện của Fish
 
+    public GameObject Fish_boss; // If in follow state, transform will move to this object 
+    public GameObject Fish_child = null;
+
     public SpriteRenderer ren;
     public Animator animator;
     public GameObject mouth;
@@ -25,11 +30,15 @@ public partial class Fish : MonoBehaviour{
     [HideInInspector] public FishState fishState = FishState.Idle;
     Vector2 diff; //different between Player and this Fish
     public Vector2 dir = Vector2.zero;
+    private Vector3 offset;
     
     public virtual void Start(){
         if (dir == null)
             dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
         score = 50 + level*30;
+        
+        // Giữ offset cố định thay vì random mỗi frame
+        offset = new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0f);
     } 
     // Update is called once per frame
     void Update(){
@@ -45,8 +54,12 @@ public partial class Fish : MonoBehaviour{
             case FishState.Eat:
                 animator.Play("Eat");
                 break;
+            case FishState.Follow:
+                HandlingState(FishState.Follow);
+                FollowBoss();
+                break;
             case FishState.Idle:
-                HandlingState();
+                HandlingState(FishState.Idle);
                 ChillFish();
                 break;
             case FishState.Attack:
@@ -68,7 +81,7 @@ public partial class Fish : MonoBehaviour{
         }
         return false;
     }
-    void HandlingState(){
+    void HandlingState(FishState defau){
         diff = Player.Instance.transform.position - this.transform.position;
         if (diff.magnitude <= range){
             if (level <= Player.Instance.level){
@@ -79,7 +92,7 @@ public partial class Fish : MonoBehaviour{
             }
         }
         else{
-            fishState = FishState.Idle;
+            fishState = defau;
         }
     }
     void Move(float multiplier = 1f){
@@ -102,7 +115,6 @@ public partial class Fish : MonoBehaviour{
             }
             transform.localScale = oldScale;
         }
-
     }
     public void SetMainDirection(bool isMoveToTheRight){
         if (isMoveToTheRight){
@@ -117,4 +129,44 @@ public partial class Fish : MonoBehaviour{
         fishState = FishState.Bored;
     }
 
+    void FollowBoss()
+    {
+        if ( System.Object.ReferenceEquals(Fish_boss, null) || Fish_boss == null )
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
+        float minDistance = 2.5f;
+        Vector2 bossPos = Fish_boss.transform.position;
+        Vector2 currentPos = transform.position;
+
+        Vector2 directionToBoss = (bossPos - currentPos).normalized;
+        float distanceToBoss = Vector2.Distance(bossPos, currentPos);
+
+        Fish bossScript = Fish_boss.GetComponent<Fish>();
+        float bossSpeed = bossScript != null ? bossScript.speed : speed;
+
+        // Giảm offset khi gần đến boss
+        float distanceFactor = Mathf.Clamp01(distanceToBoss / 5.0f);
+        Vector3 finalOffset = distanceToBoss > 2.0f ? offset * distanceFactor : Vector3.zero;
+
+        if (distanceToBoss > minDistance)
+        {
+            transform.position = Vector2.MoveTowards(currentPos, bossPos + (Vector2)finalOffset, bossSpeed * Time.deltaTime);
+        }
+
+        if (directionToBoss.x > 0)
+        {
+            Vector3 oldScale = transform.localScale;
+            oldScale.x = Mathf.Abs(oldScale.x);
+            transform.localScale = oldScale;
+        }
+        else if (directionToBoss.x < 0)
+        {
+            Vector3 oldScale = transform.localScale;
+            oldScale.x = -Mathf.Abs(oldScale.x);
+            transform.localScale = oldScale;
+        }
+    }
 }
