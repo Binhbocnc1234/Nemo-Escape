@@ -302,7 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6148114590996887311}
   - component: {fileID: 7535710307803045605}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}

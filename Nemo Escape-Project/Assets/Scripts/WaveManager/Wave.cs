@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem.XR;
 
 public class Wave : MonoBehaviour{
-    public List<GameObject> level1 = new List<GameObject>();
-    protected List<GameObject> level2 = new List<GameObject>();
-    protected List<GameObject> level3 = new List<GameObject>();
+    public List<GameObject> fishInLevel = new List<GameObject>();
 
     protected static Wave instance;
     public static Wave Instance{ get => instance; }
@@ -34,24 +32,11 @@ public class Wave : MonoBehaviour{
         }
           
     }
-
-    void Add(string s, List<GameObject> list_entity){
-        foreach (Transform c in container.transform){
-            list_entity.Add(c.gameObject);
-        }
-
-    }
     public void Start(){
-
         timer = new Timer(time_count);
-        Add("Level1", level1);
-        // Add("Level2", level2);
-        // Add("Level3", level3);
-
     }
 
     public void Update(){
-
         Spawn();
 
     }
@@ -112,65 +97,48 @@ public class Wave : MonoBehaviour{
 
     
     protected void Spawn(){
-     
-       RandomModule randoms = new RandomModule();
-                if(Player.Instance.level < 5){
-                    if(timer.Count()){
-                        // Debug.Log("Spawn");
-                        GameObject random = GetRandomObject(level1);
-                        var instance = GameManager.Instance; 
-                        Transform fishContainer = ObjectRef.Instance.fishContainer;
-                        float random_Y = randoms.RandomBetween(instance.minBounds.y, instance.maxBounds.y);
-                        // Random point to be spawn, left or right
-                        if(randoms.RadomOneTwo()){
-                            Vector3 pos = new Vector3(instance.minBounds.x, random_Y, 0f);
-                            GameObject clone = Instantiate(random, pos, Quaternion.identity, fishContainer);
+        RandomModule randoms = new RandomModule();
+        if(timer.Count()){
+            // Debug.Log("Spawn");
+            GameObject random = GetRandomObject(fishInLevel);
+            var instance = GameManager.Instance; 
+            Transform fishContainer = ObjectRef.Instance.fishContainer;
+            float random_Y = randoms.RandomBetween(instance.minBounds.y, instance.maxBounds.y);
+            // Random point to be spawn, left or right
+            if(randoms.RadomOneTwo()){
+                Vector3 pos = new Vector3(instance.minBounds.x - 2, random_Y, 0f);
+                GameObject clone = Instantiate(random, pos, Quaternion.identity, fishContainer);
 
-                            Fish cloneScript = clone.GetComponent<Fish>();
-                            cloneScript.SetMainDirection(true);
-                            if(cloneScript.Fish_child != null){
-                                for(int i = 0; i < 2; i++){
-                                    GameObject cloneChild = Instantiate(cloneScript.Fish_child, pos, Quaternion.identity, fishContainer);
-                                    cloneChild.GetComponent<Fish>().fishState = FishState.Follow;
-                                    cloneChild.GetComponent<Fish>().Fish_boss = clone;
-                                }
-                            }
-                        }   
-                        else{
-                            Vector3 pos = new Vector3(instance.maxBounds.x, random_Y, 0f);
-                            GameObject clone = Instantiate(random, pos, Quaternion.identity, fishContainer);
-
-                            Fish cloneScript = clone.GetComponent<Fish>();
-                            cloneScript.SetMainDirection(false);
-                            if(cloneScript.Fish_child != null){
-                                for(int i = 0; i < 2; i++){
-                                    GameObject cloneChild = Instantiate(cloneScript.Fish_child, pos, Quaternion.identity, fishContainer);
-                                    cloneChild.GetComponent<Fish>().fishState = FishState.Follow;
-                                    cloneChild.GetComponent<Fish>().Fish_boss = clone;
-                                }
-                            }
-                        }
-
+                Fish cloneScript = clone.GetComponent<Fish>();
+                cloneScript.SetMainDirection(true);
+                if(cloneScript.Fish_child != null){
+                    for(int i = 0; i < 3; i++){
+                        GameObject cloneChild = Instantiate(cloneScript.Fish_child, pos, Quaternion.identity, fishContainer);
+                        cloneChild.GetComponent<Fish>().fishState = FishState.Follow;
+                        cloneChild.GetComponent<Fish>().Fish_boss = clone;
                     }
                 }
-        }
+            }   
+            else{
+                Vector3 pos = new Vector3(instance.maxBounds.x + 2, random_Y, 0f);
+                GameObject clone = Instantiate(random, pos, Quaternion.identity, fishContainer);
 
-
-
-
-
-    }
-    public Fish GetBestFish(){
-        Fish highestFish = null;
-        foreach(Transform child in container.transform){
-            Fish f = child.GetComponent<Fish>();
-            if (f.level <= Player.Instance.level){
-                if (highestFish == null || highestFish.level < f.level){
-                    highestFish = f;
+                Fish cloneScript = clone.GetComponent<Fish>();
+                cloneScript.SetMainDirection(false);
+                if(cloneScript.Fish_child != null){
+                    for(int i = 0; i < 3; i++){
+                        GameObject cloneChild = Instantiate(cloneScript.Fish_child, pos, Quaternion.identity, fishContainer);
+                        cloneChild.GetComponent<Fish>().fishState = FishState.Follow;
+                        cloneChild.GetComponent<Fish>().Fish_boss = clone;
+                    }
                 }
             }
+
         }
-        return highestFish;
+
     }
+
+}
+    
 
 

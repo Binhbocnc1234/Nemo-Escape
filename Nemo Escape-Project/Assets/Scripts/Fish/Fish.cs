@@ -27,7 +27,7 @@ public partial class Fish : MonoBehaviour{
     public Animator animator;
     public GameObject mouth;
 
-    [HideInInspector] public FishState fishState = FishState.Idle;
+    public FishState fishState = FishState.Idle;
     Vector2 diff; //different between Player and this Fish
     public Vector2 dir = Vector2.zero;
     private Vector3 offset;
@@ -36,7 +36,7 @@ public partial class Fish : MonoBehaviour{
         if (dir == null)
             dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
         score = 50 + level*30;
-        
+        StartCoroutine(SelfDestroy(8));
         // Giữ offset cố định thay vì random mỗi frame
         offset = new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0f);
     } 
@@ -69,7 +69,7 @@ public partial class Fish : MonoBehaviour{
                 Escape();
                 break;
         }
-        StartCoroutine(SelfDestroy(8));
+        
         CheckNemo();
     }
     bool CheckOutOfBound(int tolerance = 3){
@@ -126,11 +126,16 @@ public partial class Fish : MonoBehaviour{
     }
     IEnumerator SelfDestroy(int time){
         yield return new WaitForSeconds(time);
+        dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
         fishState = FishState.Bored;
     }
 
     void FollowBoss()
     {
+        if (Fish_boss != null && Fish_boss.GetComponent<Fish>().fishState == FishState.Bored){
+            fishState = FishState.Idle;
+            dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+        }
         if ( System.Object.ReferenceEquals(Fish_boss, null) || Fish_boss == null )
         {
             Destroy(this.gameObject);

@@ -11,7 +11,7 @@ public partial class Fish : MonoBehaviour{
         dir = (Player.Instance.transform.position - transform.position).normalized;
     }
     void CheckNemo(){  
-        if (Vector2.Distance(mouth.transform.position, Player.Instance.transform.position) <= 0.4f && this.level > Player.Instance.level){
+        if (Vector2.Distance(mouth.transform.position, Player.Instance.transform.position) <= eatingRadius && this.level > Player.Instance.level){
             fishState = FishState.Eat;
             Destroy(Player.Instance.gameObject);
             StartCoroutine(GameManager.Instance.Lose());
