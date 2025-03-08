@@ -50,11 +50,11 @@ Nemo-Escape project/Assets/Scripts
 
 **Information about folders in Scripts:**
 
--Framework: contains utility classes such as Singleton, HarmonicOscillation, Timer, SwitchScene, Random. These classes are not specific to this project. They will be used by other classes, or even other projects
--Nemo: contains classes related to the player
--Fish: contains scripts related to the 12 fish species in the game (except the player)
--UI: contains support classes in tasks related to UI-components: color changing animation, zoom in and out animation, input from the player, looping background
--Other: different from Framework, the classes in this folder are still very important and specific to this project. It's just that I don't know where to classify them
+- Framework: contains utility classes such as Singleton, HarmonicOscillation, Timer, SwitchScene, Random. These classes are not specific to this project. They will be used by other classes, or even other projects
+- Nemo: contains classes related to the player
+- Fish: contains scripts related to the 12 fish species in the game (except the player)
+- UI: contains support classes in tasks related to UI-components: color changing animation, zoom in and out animation, input from the player, looping background
+- Other: different from Framework, the classes in this folder are still very important and specific to this project. It's just that I don't know where to classify them
 
 **Some significant scripts**
 
